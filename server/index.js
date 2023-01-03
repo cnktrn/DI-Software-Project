@@ -27,7 +27,7 @@ app.use("/lists", listsRouter);
 app.use("/users", usersRouter);
 
 // set up the connection to the database and start the app, once the connection is established
-const CONNECTION_URL = "mongodb+srv://ray:ray1234@cluster0.sdytz.mongodb.net/shoppinglist?retryWrites=true&w=majority";
+const CONNECTION_URL = "mongodb+srv://ray:ray1234@cluster0.myorp.mongodb.net/shoppinglist?retryWrites=true&w=majority";
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         app.listen(PORT, () => {
@@ -37,3 +37,4 @@ mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: tr
     .catch((error) => console.log(error.message));
 // set another default value for mongoose
 mongoose.set("returnOriginal", false);
+mongoose.set("strictQuery", true);
