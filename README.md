@@ -1,15 +1,16 @@
 # Digital Innovation - Coding Project
 Dear Students,
 
-this is the repository for our DI coding project. You will find all information and assignments here. The code we produce during the tutorial sessions will be pushed to this repo, so you can build upon it for your homework assignments. Example solutions for the assignments will also be added to this repo.
+this is the repository for our DI coding project for the winter term 2022/23. You will find all information and assignments here. The code we produce during the tutorial sessions will be pushed to this repo, so you can build upon it for your homework assignments. Example solutions for the assignments will also be added to this repo.
 
 ## Schedule
 ### Wednesdays - Live Coding Sessions 
-Our live coding sessions will be held from 12:**00**pm to 1:**30**pm. Zoom Meeting URL can be found in LSF
+Our live coding sessions will be held from 12:15pm to 1:45pm in the same room as the lecture.
 
-### Fridays - Consultation
-I will be available for questions and problems every Friday from 3pm to 5pm. This is a voluntary offer to everyone. You can just join the Zoom Meeting and get help, if you are stuck somewhere. We will reuse the lecture Zoom meeting for the consultation, URL can be found in LSF.\
-Exception: The third consultation will be held on Thursday, 23.12.2021, instead of Friday.
+### Consultation
+I will be available for questions and problems every Friday and Saturday. This is a voluntary offer to everyone. If you need help with anything, please notify me with a short email, also shortly describing the problem. We will set up an appropriate Zoom meeting.
+
+## Please note that the Assignments below are from last year's project. In our first session on the 11th of January 2023, we will start from here, implementing the frontend.
 
 ## Assignment until 12.01.2022
 1. We are currently saving plain text passwords to the database, which is an absolute no-go from a security perspective.
