@@ -12,6 +12,12 @@ I will be available for questions and problems every Friday and Saturday. This i
 
 ## Please note that the Assignments below are from last year's project. In our first session on the 11th of January 2023, we will start from here, implementing the frontend.
 
+## Assignment until 25.01.2023
+I have completed the implementation of the login component. After the tutorial I added two more things:
+1. After a successful login, the application changes the route to /lists to display the current list of shopping lists (not implemented yet)
+2. After an unsuccessful login, an error message gets displayed below the input fields.
+Until next week, please implement the SignUp.jsx component to have similar functionality as the login component. 
+
 ## Assignment until 12.01.2022
 1. We are currently saving plain text passwords to the database, which is an absolute no-go from a security perspective.
 Please change our server so that passwords are hashed. Please use the bcrypt framework for hashing. 
