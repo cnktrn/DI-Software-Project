@@ -1,8 +1,11 @@
 import React, {useState} from "react";
+import {useHistory} from "react-router-dom";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    const history = useHistory();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,6 +25,7 @@ const Login = () => {
 
         if (response.ok) {
             window.localStorage.setItem("token", jsonResponse.token);
+            history.push("/list");
         } else {
             console.log("Something went wrong");
             console.log(jsonResponse);
