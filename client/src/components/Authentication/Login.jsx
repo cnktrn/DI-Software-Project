@@ -4,6 +4,7 @@ import {useHistory} from "react-router-dom";
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState();
 
     const history = useHistory();
 
@@ -25,10 +26,11 @@ const Login = () => {
 
         if (response.ok) {
             window.localStorage.setItem("token", jsonResponse.token);
-            history.push("/list");
+            history.push("/lists");
         } else {
             console.log("Something went wrong");
             console.log(jsonResponse);
+            setErrorMessage(jsonResponse.message);
         }
 
     }
@@ -53,6 +55,10 @@ const Login = () => {
                         onChange={e => setPassword(e.target.value)}
                     />
                 </div>
+                {
+                    errorMessage &&
+                    <div>{errorMessage}</div>
+                }
                 <button>Login</button>
             </form>
         </div>
