@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from "react";
+import {useHistory} from "react-router-dom";
 
 const ShoppingLists = () => {
     const [lists, setLists] = useState([]);
     const [newListName, setNewListName] = useState("");
+
+    const history = useHistory();
 
     useEffect(() => {
         getShoppingLists();
@@ -64,14 +67,16 @@ const ShoppingLists = () => {
                 lists.map(list =>
                     <div key={list._id}>
                         {list.listName}
-                        <button>View</button>
+                        <button onClick={() => history.push("/lists/" + list._id)}>View</button>
                         <button onClick={() => deleteList(list._id)}>Delete</button>
                     </div>
                 )
             }
             <div>
                 <h2>Create new List</h2>
-                <form onSubmit={e => {addNewList(e)}}>
+                <form onSubmit={e => {
+                    addNewList(e)
+                }}>
                     <input
                         value={newListName}
                         type={"text"}

@@ -3,6 +3,7 @@ import {BrowserRouter, Link, Route, Switch} from "react-router-dom";
 import SignUp from "./components/Authentication/SignUp.jsx";
 import Login from "./components/Authentication/Login.jsx";
 import ShoppingLists from "./components/ShoppingLists/ShoppingLists.jsx";
+import ShoppingList from "./components/ShoppingLists/ShoppingList";
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
                 <Route path={"/login"} exact component={Login}/>
                 <Route path={"/signup"} exact component={SignUp}/>
                 <Route path={"/lists"} exact component={ShoppingLists}/>
+                <Route path={"/lists/:id"} exact component={ShoppingList}/>
             </Switch>
         </BrowserRouter>
     )
