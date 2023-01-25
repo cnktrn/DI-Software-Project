@@ -3,10 +3,13 @@ import {useParams} from "react-router-dom";
 
 const ShoppingList = () => {
     const [list, setList] = useState();
+    const [items, setItems] = useState([]);
+
     const {id} = useParams();
 
     useEffect(() => {
         getShoppingList();
+        getItems();
     }, []);
 
     const getShoppingList = async () => {
@@ -24,6 +27,23 @@ const ShoppingList = () => {
         const jsonResponse = await response.json();
         setList(jsonResponse);
     }
+
+    const getItems = async () => {
+        const response = await fetch(
+            "http://localhost:5555/items",
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + window.localStorage.getItem("token"),
+                },
+            }
+        )
+
+        const jsonResponse = await response.json();
+        setItems(jsonResponse);
+    }
+
 
     const removeItem = async (removableItem) => {
         const oldList = list;
@@ -55,6 +75,17 @@ const ShoppingList = () => {
                     <button onClick={() => removeItem(item)}>Remove</button>
                 </div>
             )}
+            <div>
+                <h2>Items</h2>
+                {items
+                    .filter(item => !list.content.includes(item.name))
+                    .map(item =>
+                    <div key={item.name}>
+                        {item.name}
+                    </div>
+                )}
+
+            </div>
         </div>
     )
 }
