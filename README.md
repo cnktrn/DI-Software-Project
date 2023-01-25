@@ -10,7 +10,8 @@ Our live coding sessions will be held from 12:15pm to 1:45pm in the same room as
 ### Consultation
 I will be available for questions and problems every Friday and Saturday. This is a voluntary offer to everyone. If you need help with anything, please notify me with a short email, also shortly describing the problem. We will set up an appropriate Zoom meeting.
 
-## Please note that the Assignments below are from last year's project. In our first session on the 11th of January 2023, we will start from here, implementing the frontend.
+## Assignment until 01.02.2023
+Please continue our implementation of the ShoppingList.jsx component to allow it to add items to the shopping list.
 
 ## Assignment until 25.01.2023
 I have completed the implementation of the login component. After the tutorial I added two more things:
