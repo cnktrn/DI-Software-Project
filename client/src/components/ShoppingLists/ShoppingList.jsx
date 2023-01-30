@@ -66,6 +66,25 @@ const ShoppingList = () => {
         getShoppingList();
     }
 
+    const addItem = async (item) => {
+        const newList = list;
+        newList.content.push(item.name);
+
+        await fetch(
+            "http://localhost:5555/lists/" + id,
+            {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + window.localStorage.getItem("token"),
+                },
+                body: JSON.stringify({...newList}),
+            }
+        )
+
+        getShoppingList();
+    }
+
     return (
         <div>
             <h2>{list && list.listName}</h2>
@@ -82,6 +101,7 @@ const ShoppingList = () => {
                     .map(item =>
                     <div key={item.name}>
                         {item.name}
+                        <button onClick={() => addItem(item)}>Add</button>
                     </div>
                 )}
 
